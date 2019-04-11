@@ -1,6 +1,6 @@
---- ./ijkplayer-android//config/module-default.sh.orig.bak	2019-04-10 17:14:52.000000000 +0800
-+++ ./ijkplayer-android//config/module-default.sh	2019-04-10 18:21:20.000000000 +0800
-@@ -169,4 +169,13 @@
+--- ./ijkplayer-android//config/module-default.sh.bak	2019-04-11 16:59:25.000000000 +0800
++++ ./ijkplayer-android//config/module-default.sh	2019-04-11 17:31:39.000000000 +0800
+@@ -169,4 +169,22 @@
  # export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-random"
  # export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-random=LIST"
  # export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-random=LIST"
@@ -8,11 +8,20 @@
 \ No newline at end of file
 +# export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --random-seed=VALUE"
 +
++#executable ffmpeg
 +export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-ffmpeg"
-+export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-avresample"
-+export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-encoders"
++#
++
++#support concat command
 +export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-demuxers"
 +export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-muxers"
++#
++
++export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-avresample"
++export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-encoders"
 +export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-filters"
++
++
 +export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-linux-perf"
 +export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-cuvid"
++export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-cuda"
