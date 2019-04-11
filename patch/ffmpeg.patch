@@ -1,17 +1,15 @@
---- ./ijkplayer-android//android/contrib/ffmpeg-armv5/fftools/ffmpeg.c.orig.bak	2019-04-10 16:45:54.000000000 +0800
-+++ ./ijkplayer-android//android/contrib/ffmpeg-armv5/fftools/ffmpeg.c	2019-04-09 17:50:23.000000000 +0800
-@@ -4759,7 +4759,13 @@
- {
+--- ./ijkplayer-android//android/contrib/backup/ffmpeg-armv5/ffmpeg.c	2019-04-11 16:59:25.000000000 +0800
++++ ./ijkplayer-android//android/contrib/ffmpeg-armv5/fftools/ffmpeg.c	2019-04-11 17:28:32.000000000 +0800
+@@ -4832,3 +4832,11 @@
+     exit_program(received_nb_signals ? 255 : main_return_code);
+     return main_return_code;
  }
- 
--int main(int argc, char **argv)
-+int ffmpeg_exec(int argc, char **argv);
-+int main(int argc, char** argv)
-+{
-+		return ffmpeg_exec(argc, argv);
-+}
 +
-+int ffmpeg_exec(int argc, char **argv)
- {
-     int i, ret;
-     int64_t ti;
++//@patch-start
++extern int ffmpeg_exec(int argc, char* argv[]);
++int ffmpeg_exec(int argc, char* argv[])
++{
++   return main(argc, argv);
++}
++//@patch-end
+\ No newline at end of file
