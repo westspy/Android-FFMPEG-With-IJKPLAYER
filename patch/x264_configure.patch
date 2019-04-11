@@ -1,0 +1,12 @@
+--- ./ijkplayer-android//android/contrib/backup/x264-armv5/configure	2019-04-11 11:53:54.000000000 +0800
++++ ./ijkplayer-android//android/contrib/x264-armv5/configure	2019-04-11 16:12:49.000000000 +0800
+@@ -1052,6 +1052,9 @@
+             if cc_check pthread.h -lpthread "pthread_create(0,0,0,0);" ; then
+                thread="posix"
+                libpthread="-lpthread"
++            elif cc_check pthread.h -lc "pthread_create(0,0,0,0);" ; then
++            	 thread="posix"
++               libpthread="-lc"
+             else
+                 cc_check pthread.h "" "pthread_create(0,0,0,0);" && thread="posix" && libpthread=""
+             fi

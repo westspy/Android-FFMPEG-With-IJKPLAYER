@@ -1,0 +1,17 @@
+--- ./ijkplayer-android//android/contrib/ffmpeg-armv5/fftools/ffmpeg.c.orig.bak	2019-04-10 16:45:54.000000000 +0800
++++ ./ijkplayer-android//android/contrib/ffmpeg-armv5/fftools/ffmpeg.c	2019-04-09 17:50:23.000000000 +0800
+@@ -4759,7 +4759,13 @@
+ {
+ }
+ 
+-int main(int argc, char **argv)
++int ffmpeg_exec(int argc, char **argv);
++int main(int argc, char** argv)
++{
++		return ffmpeg_exec(argc, argv);
++}
++
++int ffmpeg_exec(int argc, char **argv)
+ {
+     int i, ret;
+     int64_t ti;
